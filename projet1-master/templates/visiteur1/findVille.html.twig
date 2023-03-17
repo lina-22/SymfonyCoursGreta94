@@ -1,0 +1,13 @@
+<h1>Visiteur par ville</h1>
+
+{{ dump(visVilNum) }}
+
+{% for vis in visVilNum %}
+
+<li><strong>Prenom: </strong>{{vis.prenom}}</li>
+<li><strong>Nom: </strong>{{vis.nom}}</li>
+<li><strong>numéro: </strong>{{vis.tel}}</li>
+
+
+
+{% endfor %}

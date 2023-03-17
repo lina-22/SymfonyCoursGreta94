@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit RapportVisiteMedicament{% endblock %}
+
+{% block body %}
+    <h1>Edit RapportVisiteMedicament</h1>
+
+    {{ include('rapport_visite_medicament/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_rapport_visite_medicament_index') }}">back to list</a>
+
+    {{ include('rapport_visite_medicament/_delete_form.html.twig') }}
+{% endblock %}

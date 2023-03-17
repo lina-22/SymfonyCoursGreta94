@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}RapportVisite index{% endblock %}
+
+{% block body %}
+    <h1>RapportVisite index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Bilan</th>
+                <th>DateVisite</th>
+                <th>DateRedactionRp</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for rapport_visite in rapport_visites %}
+            <tr>
+                <td>{{ rapport_visite.id }}</td>
+                <td>{{ rapport_visite.bilan }}</td>
+                <td>{{ rapport_visite.dateVisite }}</td>
+                <td>{{ rapport_visite.dateRedactionRp }}</td>
+                <td>
+                    <a href="{{ path('app_rapport_visite_show', {'id': rapport_visite.id}) }}">show</a>
+                    <a href="{{ path('app_rapport_visite_edit', {'id': rapport_visite.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_rapport_visite_new') }}">Create new</a>
+{% endblock %}

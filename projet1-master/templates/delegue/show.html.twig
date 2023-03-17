@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Delegue{% endblock %}
+
+{% block body %}
+    <h1>Delegue</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ delegue.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ delegue.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ delegue.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ delegue.adresse }}</td>
+            </tr>
+            <tr>
+                <th>Cp</th>
+                <td>{{ delegue.cp }}</td>
+            </tr>
+            <tr>
+                <th>Ville</th>
+                <td>{{ delegue.ville }}</td>
+            </tr>
+            <tr>
+                <th>Tel</th>
+                <td>{{ delegue.tel }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_delegue_index') }}">back to list</a>
+
+    <a href="{{ path('app_delegue_edit', {'id': delegue.id}) }}">edit</a>
+
+    {{ include('delegue/_delete_form.html.twig') }}
+{% endblock %}

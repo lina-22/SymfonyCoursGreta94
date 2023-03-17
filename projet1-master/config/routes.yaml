@@ -1,0 +1,76 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+accueil: 
+    path: /accueil/{profil}/{annee}
+    controller: App\Controller\AccueilController::index
+    requirements:
+        profil: "[a-zA-Z]+"
+        annee: '\d{4}'
+
+
+bonjour: 
+    path: /bonjour
+    controller: App\Controller\TestController::accueil
+
+yo: 
+    path: /yo
+    controller: App\Controller\z_AccueilController::yo
+
+test: 
+    path: /test
+    controller: App\Controller\TestController::letest
+
+
+liste:
+    path: /liste
+    controller: App\Controller\ListeController::LaListe
+
+ajout:
+    path: /ajout
+    controller: App\Controller\AccueilController::newClient
+
+ajoutMedic:
+    path: /ajoutMedic
+    controller: App\Controller\MedicamentController::addMedoc
+
+ajoutVisiteur:
+    path: /ajoutVisit
+    controller: App\Controller\VisiteurController::addVis
+
+ajoutSecteur:
+    path: /ajoutSecteur
+    controller: App\Controller\VisiteurController::ajoutSecteur
+
+ajoutRegion:
+    path: /ajoutRegion
+    controller: App\Controller\VisiteurController::addVis
+
+ajoutDelegue:
+    path: /ajoutDelegue
+    controller: App\Controller\VisiteurController::addVis
+
+ajoutRapportVisite:
+    path: /ajoutRapportVisite
+    controller: App\Controller\VisiteurController::addVis  
+
+parville:
+    path: /parville/{visit}
+    controller: App\Controller\VisiteurController::getVisiteurByVille   
+    
+parVillAndNum:
+    path: /parvilleNum/{prenom}/{tel}
+    controller: App\Controller\VisiteurController::getVisiteurByPrenomAndNum 
+
+connexion:
+    path: /connexionForm
+    controller: App\Controller\ConnexionController::formToConnect  
+    
+formSecteur:
+    path: /formSecteur
+    controller: App\Controller\ConnexionController::formToConnectObjet   
+    
+formMedic:
+    path: /formmedic
+    controller: App\Controller\MedicamentController::formMedoc   

@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Delegue index{% endblock %}
+
+{% block body %}
+    <h1>Delegue index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Adresse</th>
+                <th>Cp</th>
+                <th>Ville</th>
+                <th>Tel</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for delegue in delegues %}
+            <tr>
+                <td>{{ delegue.id }}</td>
+                <td>{{ delegue.nom }}</td>
+                <td>{{ delegue.prenom }}</td>
+                <td>{{ delegue.adresse }}</td>
+                <td>{{ delegue.cp }}</td>
+                <td>{{ delegue.ville }}</td>
+                <td>{{ delegue.tel }}</td>
+                <td>
+                    <a href="{{ path('app_delegue_show', {'id': delegue.id}) }}">show</a>
+                    <a href="{{ path('app_delegue_edit', {'id': delegue.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_delegue_new') }}">Create new</a>
+{% endblock %}

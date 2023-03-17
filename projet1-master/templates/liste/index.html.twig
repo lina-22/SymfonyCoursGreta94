@@ -1,0 +1,22 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Les Eleves{% endblock %}
+
+{% block body %}
+<h1>Exercice Liste</h1>
+
+<ul>
+{% for eleve in eleves %}
+
+<li><strong>Prenom: </strong>{{eleve.prenom}}</li>
+<li><strong>Nom: </strong>{{eleve.nom}}</li>
+<li><strong>Age: </strong>{{eleve.age}}</li>
+<li><strong>Métier: </strong>{{eleve.metier}}</li> 
+
+
+{% endfor %}
+
+</ul>
+
+{% endblock %}
